@@ -5,21 +5,19 @@
             <img src="{{ asset('stream/assets/images/stream.svg') }}" alt="">
         </a>
         <div class="links flex flex-col mt-16 gap-2">
-            <a href="dashboard.html" class="side-link active">
+            <a href="{{ route('member.dashboard') }}" class="side-link active">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 17L12 22L22 17" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M2 12L12 17L22 12" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
+                    <path d="M2 17L12 22L22 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
                 Watch
             </a>
             <a href="!#" class="side-link group">
-                <svg width="24" height="24" class="group" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
+                <svg width="24" height="24" class="group" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -44,8 +42,7 @@
             <a href="!#" class="side-link">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23 7L16 12L23 17V7Z" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
+                    <path d="M23 7L16 12L23 17V7Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path
                         d="M14 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H14C15.1046 19 16 18.1046 16 17V7C16 5.89543 15.1046 5 14 5Z"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -56,8 +53,7 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 12V22H4V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M22 7H2V12H22V7Z" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
+                    <path d="M22 7H2V12H22V7Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M12 22V7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path
                         d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z"
@@ -70,7 +66,7 @@
                 Your Gifts
             </a>
             <div class="flex border-t border-softpur"></div>
-            <a href="dashboard-subscription.html" class="side-link">
+            <a href="{{ route('member.user_premium.index') }}" class="side-link">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -92,7 +88,7 @@
                 </svg>
                 Account Settings
             </a>
-            <a href="!#" class="side-link">
+            <a href="{{ route('member.logout') }}" class="side-link">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path

@@ -36,7 +36,7 @@
                 <!-- Logo -->
                 <div class=" flex flex-row justify-center items-center">
                     <a href="/index.html" class="block">
-                        <img src="/assets/images/stream.svg" alt="stream" />
+                        <img src="{{ asset('stream/assets/images/stream.svg') }}" alt="stream" />
                     </a>
                 </div>
 

@@ -47,7 +47,7 @@
                                                     width="50%">
                                             </td>
                                             <td>
-                                                <img src="{{ asset('storage/thumbnail/' . $movie->small_thumbnail) }}"
+                                                <img src="{{ asset('storage/thumbnail/' . $movie->large_thumbnail) }}"
                                                     width="50%">
                                             </td>
                                             <td>{{ $movie->categories }}</td>
@@ -57,7 +57,8 @@
                                                     class="btn btn-secondary">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
-                                                <form action="{{ route('admin.movie.destroy', $movie->id)  }}" method="POST">
+                                                <form action="{{ route('admin.movie.destroy', $movie->id) }}"
+                                                    method="POST">
                                                     @method('delete')
                                                     @csrf
                                                     <button type="submit" class="btn btn-danger">
