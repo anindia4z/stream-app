@@ -5,21 +5,22 @@ namespace App\Http\Controllers\Member;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\UserPremium;
+use Carbon\Carbon;
 
 class UserPremiumController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $userId = auth()->user()->id;
         $userPremium = UserPremium::with('package')
-        ->where('user_id', $userId)
-        ->first();
+            ->where('user_id', $userId)
+            ->first();
 
-        if(!$userPremium) {
+        if (!$userPremium) {
             return redirect()->route('pricing');
         }
-
-        return view('member.subcription', ['user_premium' => $userPremium]);
-
+        
+        return view('member.subcription', ['user_premium' => $userPremium, 'diff' => $userPremium->diff()]);
     }
 
     public function destroy($id)

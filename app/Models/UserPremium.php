@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,5 +19,14 @@ class UserPremium extends Model
     public function package()
     {
         return $this->belongsTo(Packages::class);
+    }
+
+    public function diff()
+    {
+        $created_at = Carbon::parse($this->created_at);
+        $now = Carbon::now();
+        $diff = $created_at->diffInDays($now)+1;
+
+        return $diff;
     }
 }
