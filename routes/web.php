@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MovieController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\LoginController;
-
+use App\Http\Controllers\Member\AccountSetingController;
 use App\Http\Controllers\Member\RegisterController;
 use App\Http\Controllers\Member\LoginController as MemberLoginController;
 use App\Http\Controllers\Member\DashboardController;
@@ -58,6 +58,8 @@ Route::post('/login', [MemberLoginController::class, 'auth'])->name('member.logi
 Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
 
 Route::view('/payment-finish', 'member.payment-finish')->name('member.payment.finish');
+
+Route::get('/account-setting', [AccountSetingController::class, 'index'])->name('member.account.setting');
 
 Route::group(['prefix' => 'member', 'middleware' => ['auth']], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('member.dashboard');

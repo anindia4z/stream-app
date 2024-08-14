@@ -67,7 +67,7 @@
                                 Rp {{ number_format($standart->price) }}
                             </div>
                             <p class="text-sm text-stream-gray">
-                                /bulan
+                                /30 Hari
                             </p>
                             <hr class="my-[30px]">
 

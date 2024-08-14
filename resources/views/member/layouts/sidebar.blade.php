@@ -5,7 +5,7 @@
             <img src="{{ asset('stream/assets/images/stream.svg') }}" alt="">
         </a>
         <div class="links flex flex-col mt-16 gap-2">
-            <a href="{{ route('member.dashboard') }}" class="side-link active">
+            <a href="{{ route('member.dashboard') }}" class="side-link text-white hover:bg-[#3D3762]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 17L12 22L22 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -15,20 +15,7 @@
                 </svg>
                 Watch
             </a>
-            <a href="!#" class="side-link group">
-                <svg width="24" height="24" class="group" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M2 12H22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                Discover
-            </a>
-            <a href="!#" class="side-link">
+            <a href="!#" class="side-link text-white hover:bg-[#3D3762]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -39,7 +26,7 @@
                 <span
                     class="bg-[#6EC2DF] text-[#1E5062] text-base rounded-full font-semibold text-center px-[7px] py-[1px]">6</span>
             </a>
-            <a href="!#" class="side-link">
+            <a href="!#" class="side-link text-white hover:bg-[#3D3762]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M23 7L16 12L23 17V7Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -49,24 +36,8 @@
                 </svg>
                 Playlist
             </a>
-            <a href="!#" class="side-link">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 12V22H4V12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M22 7H2V12H22V7Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12 22V7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-
-                Your Gifts
-            </a>
             <div class="flex border-t border-softpur"></div>
-            <a href="{{ route('member.user_premium.index') }}" class="side-link">
+            <a href="{{ route('member.user_premium.index') }}" class="side-link text-white hover:bg-[#3D3762]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -76,7 +47,7 @@
                 </svg>
                 Subscription
             </a>
-            <a href="!#" class="side-link">
+            <a href="{{ route('member.account.setting') }}" class="side-link text-white hover:bg-[#3D3762]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -88,7 +59,7 @@
                 </svg>
                 Account Settings
             </a>
-            <a href="{{ route('member.logout') }}" class="side-link">
+            <a href="{{ route('member.logout') }}" class="side-link text-white hover:bg-[#3D3762]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path

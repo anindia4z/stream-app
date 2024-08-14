@@ -21,9 +21,9 @@ class SubscriptionMiddleware
         ->where('user_id', $userId)
         ->first();
 
-        if($userPremium->diff()>30){
+        /*if($userPremium->diff()>30){
             return redirect()->route('pricing');
-        }
+        } */
 
         return $next($request);
     }
