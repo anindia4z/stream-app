@@ -115,7 +115,7 @@
                                 <input type="hidden" name="packages_id" value="{{ $standart->id }}">
                                 <button 
                                 type="submit"
-                                    class="mt-10 py-3 block outline outline-1 outline-stream-gray rounded-full text-center">
+                                    class="mt-10 py-3 w-48 block outline outline-1 outline-stream-gray rounded-full text-center">
                                     <span class="text-stream-gray text-base font-normal">
                                         Subscribe
                                         Now
@@ -180,8 +180,8 @@
                                 <input type="hidden" name="packages_id" value="{{ $gold->id }}">
                                 <button 
                                 type="submit"
-                                    class="mt-10 py-3 block bg-indigo-600 rounded-full text-center">
-                                    <span class="text-stream-gray text-base font-normal">
+                                    class="mt-10 py-3 w-48 block bg-indigo-600 rounded-full text-center">
+                                    <span class="text-white text-base font-normal">
                                         Subscribe
                                         Now
                                     </span>

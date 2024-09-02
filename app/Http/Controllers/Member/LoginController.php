@@ -30,7 +30,7 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'credentials' => 'Yout credentials are wrong'
+            'credentials' => 'Your credentials are wrong'
         ])->withInput();
     }
 

@@ -63,7 +63,6 @@
                                     <div style="color: red">{{ $message }}</div>
                                 @enderror
                             </div>
-
                             <div class="form-input flex flex-col gap-3">
                                 <label for="password" class="text-base font-medium text-stream-dark">Password</label>
                                 <input type="password"
@@ -76,6 +75,7 @@
                             @error('credentials')
                                 <div style="color: red">{{ $message }}</div>
                             @enderror
+                            <p class="text-stream-dark mt-4 text-center">Remember Your Password?<a href="#" class="text-blue-600"> Reset Password</a></p>
                             <button type="submit" class="bg-indigo-600 rounded-full py-3 mt-4 text-center">
                                 <span class="font-semibold text-white text-base">Continue</span>
                             </button>

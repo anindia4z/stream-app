@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -20,6 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'birth',
         'password',
         'phone_number',
         'avatar',
@@ -34,7 +36,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
-
+    
     /**
      * The attributes that should be cast.
      *
@@ -43,4 +45,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }

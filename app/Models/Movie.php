@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Movie extends Model
 {
+    
     use HasFactory, SoftDeletes;
-
+    
     protected $table = 'movies';
 
     protected $fillable = [

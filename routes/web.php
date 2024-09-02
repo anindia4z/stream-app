@@ -5,9 +5,11 @@ use App\Http\Controllers\Admin\MovieController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Member\AccountSetingController;
+use App\Http\Controllers\Member\AccountSettingController;
 use App\Http\Controllers\Member\RegisterController;
 use App\Http\Controllers\Member\LoginController as MemberLoginController;
 use App\Http\Controllers\Member\DashboardController;
+use App\Http\Controllers\Member\FavoriteMovieController;
 use App\Http\Controllers\Member\MovieController as MemberMovieController;
 use App\Http\Controllers\Member\PricingController;
 use App\Http\Controllers\Member\TransactionController as MemberTransactionController;
@@ -59,7 +61,22 @@ Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
 
 Route::view('/payment-finish', 'member.payment-finish')->name('member.payment.finish');
 
-Route::get('/account-setting', [AccountSetingController::class, 'index'])->name('member.account.setting');
+Route::get('/account-setting/{id}', [AccountSettingController::class, 'index'])->name('account.setting');
+Route::get('/account-setting/edit/{id}', [AccountSettingController::class, 'edit'])->name('account.setting.edit');
+Route::put('/account-setting/update/{id}', [AccountSettingController::class, 'update'])->name('account.setting.update');
+
+Route::get('/password/{id}', [AccountSettingController::class, 'indexPassword'])->name('password');
+Route::post('/password/update/{id}', [AccountSettingController::class, 'changePassword'])->name('password.update');
+
+Route::get('/favorite-movie', [FavoriteMovieController::class, 'index'])->name('favorite.movie');
+
+
+/* Route::group(['prefix' => 'account-setting'], function () {
+    Route::get('/', [AccountSettingController::class, 'index'])->name('member.account.setting');
+    Route::get('/account-edit/{id}', [AccountSettingController::class, 'edit'])->name('member.account.edit');
+    Route::put('/account-update/{id}', [AccountSettingController::class, 'update'])->name('member.account.update');
+    Route::delete('/account-setting/delete-profile/{id}', [AccountSettingController::class, 'destroy'])->name('destroy.profile.setting');
+}); */ 
 
 Route::group(['prefix' => 'member', 'middleware' => ['auth']], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('member.dashboard');
@@ -73,9 +90,14 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth']], function() {
 
     Route::get('movie/{id}', [MemberMovieController::class, 'show'])->name('member.movie.detail')->middleware(SubscriptionMiddleware::class );
     Route::get('movie/{id}/watch', [MemberMovieController::class, 'watch'])->name('member.movie.watch')->middleware(SubscriptionMiddleware::class );
-
+    
 });
 
+/* // Rute untuk menampilkan daftar film favorit
+Route::get('favorites/{userId}', [FavoriteMovieController::class, 'favoriteMovies'])->name('member.favorite-movies');
+// Rute untuk menambahkan atau menghapus film dari daftar favorit
+Route::post('movie/{movieId}/like/{userId}', [FavoriteMovieController::class, 'likeMovie'])->name('member.movie.like');
+ */
 
 
 /*Route::group(['prefix' => 'admin'], function () {

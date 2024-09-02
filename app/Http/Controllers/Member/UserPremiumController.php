@@ -25,7 +25,7 @@ class UserPremiumController extends Controller
         if ($diff > 30) {
             return redirect()->route('pricing');
         }
-
+        
         return view('member.subcription', ['user_premium' => $userPremium, 'diff' => $userPremium->diff()]);
     }
 
