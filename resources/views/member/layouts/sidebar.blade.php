@@ -26,7 +26,7 @@
                 <span
                     class="bg-[#6EC2DF] text-[#1E5062] text-base rounded-full font-semibold text-center px-[7px] py-[1px]">6</span>
             </a>
-            <a href="!#" class="side-link text-white hover:bg-[#3D3762]">
+            <a href="{{ route('member.playlists') }}" class="side-link text-white hover:bg-[#3D3762]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M23 7L16 12L23 17V7Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

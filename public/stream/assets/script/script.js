@@ -22,4 +22,20 @@ $(document).ready(function () {
             }
         })
     })
+    
+    //closeModal
+    document.getElementById('addPlaylist').onclick = function() {
+        document.getElementById('playlistModal').classList.remove('hidden')
+    }
+    document.getElementById('closePlaylistModal').onclick = function() {
+        document.getElementById('playlistModal').classList.add('hidden')
+    }
+    document.getElementById('selectPlaylist').onchange = function(e) {
+        if (e.currentTarget.value == 'custom') {
+            document.getElementById('inputPlaylistName').classList.remove('hidden')
+        } else if (!document.getElementById('inputPlaylistName').classList.contains('hidden')) {
+            document.getElementById('inputPlaylistName').classList.add('hidden')
+        }
+    }
+
 })

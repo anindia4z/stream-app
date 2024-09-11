@@ -11,6 +11,7 @@ use App\Http\Controllers\Member\LoginController as MemberLoginController;
 use App\Http\Controllers\Member\DashboardController;
 use App\Http\Controllers\Member\FavoriteMovieController;
 use App\Http\Controllers\Member\MovieController as MemberMovieController;
+use App\Http\Controllers\Member\PlaylistController;
 use App\Http\Controllers\Member\PricingController;
 use App\Http\Controllers\Member\TransactionController as MemberTransactionController;
 use App\Http\Controllers\Member\UserPremiumController;
@@ -69,14 +70,11 @@ Route::get('/password/{id}', [AccountSettingController::class, 'indexPassword'])
 Route::post('/password/update/{id}', [AccountSettingController::class, 'changePassword'])->name('password.update');
 
 Route::get('/favorite-movie', [FavoriteMovieController::class, 'index'])->name('favorite.movie');
+Route::delete('/favorite-movie/{id}', [FavoriteMovieController::class, 'destroy'])->name('favorite.movie.destroy');
 
+Route::get('/playlists', [PlaylistController::class, 'index'])->name('member.playlists');
+Route::get('/playlists/{id}', [PlaylistController::class, 'show'])->name('member.playlists.detail');
 
-/* Route::group(['prefix' => 'account-setting'], function () {
-    Route::get('/', [AccountSettingController::class, 'index'])->name('member.account.setting');
-    Route::get('/account-edit/{id}', [AccountSettingController::class, 'edit'])->name('member.account.edit');
-    Route::put('/account-update/{id}', [AccountSettingController::class, 'update'])->name('member.account.update');
-    Route::delete('/account-setting/delete-profile/{id}', [AccountSettingController::class, 'destroy'])->name('destroy.profile.setting');
-}); */ 
 
 Route::group(['prefix' => 'member', 'middleware' => ['auth']], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('member.dashboard');
@@ -88,8 +86,12 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth']], function() {
     Route::get('subcription', [UserPremiumController::class, 'index'])->name('member.user_premium.index')->middleware(SubscriptionMiddleware::class );
     Route::delete('subcription/{id}', [UserPremiumController::class, 'destroy'])->name('member.user_premium.destroy')->middleware(SubscriptionMiddleware::class );
 
-    Route::get('movie/{id}', [MemberMovieController::class, 'show'])->name('member.movie.detail')->middleware(SubscriptionMiddleware::class );
+    Route::get('movie/{id}', [MemberMovieController::class, 'show'])->name('member.movie.detail')->middleware(SubscriptionMiddleware::class);
+    Route::post('movie/{id}/like', [MemberMovieController::class, 'like'])->name('member.movie.like')->middleware(SubscriptionMiddleware::class);
     Route::get('movie/{id}/watch', [MemberMovieController::class, 'watch'])->name('member.movie.watch')->middleware(SubscriptionMiddleware::class );
+    Route::post('movie/{id}/playlist', [MemberMovieController::class, 'addToPlaylist'])->name('member.movie.playlist')->middleware(SubscriptionMiddleware::class);
+    Route::delete('movie/{movieId}/playlist/{playlistId}', [MemberMovieController::class, 'deleteFromPlaylist'])->name('member.movie.playlist.delete')->middleware(SubscriptionMiddleware::class);
+
     
 });
 

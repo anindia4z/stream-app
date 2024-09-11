@@ -86,6 +86,7 @@ class MovieController extends Controller
             'featured' => 'required'
         ]);
  
+ 
         $movie = Movie::find($id);
         if ($request->small_thumbnail) {
             //save new image

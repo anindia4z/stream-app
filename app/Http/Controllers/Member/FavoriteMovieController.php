@@ -12,6 +12,18 @@ class FavoriteMovieController extends Controller
 {
     public function index()
     {
-        return view('member.favorite-movie');
+        $movies = auth()->user()->favoriteMovies;
+        return view('member.favorite-movie', ['movies' => $movies]);
+    }
+
+    public function destroy($id)
+    {
+        $user = User::find(auth()->user()->id);
+        $movie = Movie::where('id', $id)->first();
+
+        $user->favoriteMovies()->detach($movie);
+
+        return redirect()->route('favorite.movie')->with('success', 'Movie removed from favorites.');
+
     }
 }
