@@ -10,10 +10,8 @@ class PlaylistController extends Controller
 {
     public function index()
     {
-        $playlists = Playlist::all();
-        return view('member.playlists', [
-            'playlists' => $playlists
-        ]);
+        $playlists = Playlist::where('user_id', auth()->user()->id)->get();
+        return view('member.playlists', ['playlists' => $playlists]);
     }
 
     public function show($id)

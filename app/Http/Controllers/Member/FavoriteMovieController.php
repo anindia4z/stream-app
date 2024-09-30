@@ -13,6 +13,7 @@ class FavoriteMovieController extends Controller
     public function index()
     {
         $movies = auth()->user()->favoriteMovies;
+        
         return view('member.favorite-movie', ['movies' => $movies]);
     }
 

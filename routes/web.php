@@ -92,7 +92,6 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth']], function() {
     Route::post('movie/{id}/playlist', [MemberMovieController::class, 'addToPlaylist'])->name('member.movie.playlist')->middleware(SubscriptionMiddleware::class);
     Route::delete('movie/{movieId}/playlist/{playlistId}', [MemberMovieController::class, 'deleteFromPlaylist'])->name('member.movie.playlist.delete')->middleware(SubscriptionMiddleware::class);
 
-    
 });
 
 /* // Rute untuk menampilkan daftar film favorit

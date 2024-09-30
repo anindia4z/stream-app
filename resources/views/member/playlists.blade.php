@@ -5,7 +5,7 @@
 @section('title-desc', 'Our Selected Movie For Your Mood')
 
 @section('content')
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto p-2">
         <!-- Grid Menu -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <!-- Menu Item 1 -->

@@ -19,7 +19,7 @@ $(document).ready(function () {
                 dd_stream.removeClass("hidden").addClass("block");
             } else if (dd_stream.hasClass("block")) {
                 dd_stream.removeClass("block").addClass("hidden");
-            }
+            } 
         })
     })
     
@@ -37,5 +37,6 @@ $(document).ready(function () {
             document.getElementById('inputPlaylistName').classList.add('hidden')
         }
     }
+
 
 })

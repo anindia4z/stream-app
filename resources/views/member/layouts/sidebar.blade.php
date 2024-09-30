@@ -23,8 +23,8 @@
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 My Favorites
-                <span
-                    class="bg-[#6EC2DF] text-[#1E5062] text-base rounded-full font-semibold text-center px-[7px] py-[1px]">6</span>
+                {{-- <span
+                    class="bg-[#6EC2DF] text-[#1E5062] text-base rounded-full font-semibold text-center px-[7px] py-[1px]">6</span> --}}
             </a>
             <a href="{{ route('member.playlists') }}" class="side-link text-white hover:bg-[#3D3762]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"

@@ -56,10 +56,14 @@ class AccountSettingController extends Controller
             // Simpan gambar baru
             $avatar->storeAs('public/profile', $avatarName);
 
-            // Hapus gambar lama jika ada
-            if ($user->avatar && Storage::exists('public/profile/' . $user->avatar)) {
+            if ($user->avatar != null) {
                 Storage::delete('public/profile/' . $user->avatar);
             }
+
+            /* // Hapus gambar lama jika ada
+            if ($user->avatar && Storage::exists('public/profile/' . $user->avatar)) {
+                Storage::delete('public/profile/' . $user->avatar);
+            } */
 
             // Tambahkan nama gambar ke data yang diperbarui
             $data['avatar'] = $avatarName;
@@ -67,7 +71,7 @@ class AccountSettingController extends Controller
 
         // Perbarui data pengguna
         $user->update($data);
-
+ 
         return redirect()->route('account.setting', $id)->with('success', 'Profile updated successfully');
     }
 

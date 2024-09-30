@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('playlist', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->uuid('id')->primary();
+            $table->foreignUuid('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('nama');
             $table->timestamps();
         });
 
         Schema::create('playlist_movie', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('playlist_id')->constrained('playlist')->cascadeOnDelete();
-            $table->foreignId('movie_id')->constrained('movies')->cascadeOnDelete();
+            $table->uuid('id')->primary();
+            $table->foreignUuid('playlist_id')->constrained('playlist')->cascadeOnDelete();
+            $table->foreignUuid('movie_id')->constrained('movies')->cascadeOnDelete();
             $table->timestamps();
         });
     }

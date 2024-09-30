@@ -18,9 +18,7 @@ class MovieController extends Controller
         $movie = Movie::findorFail($id);
         $user = auth()->user();
 
-        $playlists = Playlist::all();
-
-
+        $playlists = Playlist::where('user_id', auth()->user()->id)->get();
         return view('member.movie-detail', ['movie' => $movie, 'user' => $user, 'playlists' => $playlists ]);
     }
 

@@ -1,6 +1,6 @@
 @extends('member.layouts.base')
 
-@section('title', 'Playlist')
+@section('title', $playlist->nama)
 
 @section('title-desc', 'Our Selected Movie For Your Mood')
 
@@ -10,7 +10,7 @@
         <!-- Movies 1 -->
         @foreach ($playlist->movies as $movie)
             <div class="relative group overflow-hidden mr-[30px]">
-                <a href="{{ route('member.movie.watch', $movie->id) }}">
+                <a href="{{ route('member.movie.detail', $movie->id) }}">
                     <img src="{{ asset('storage/thumbnail/' . $movie->small_thumbnail) }}"
                         class="object-cover rounded-[30px] w-[240px] h-[300px] mb-3" alt="">
                 </a>

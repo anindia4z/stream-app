@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transaction', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('package_id')->constrained('packages');
-            $table->foreignId('user_id')->constrained('users');
+            $table->uuid('id')->primary();
+            $table->foreignUuid('package_id')->constrained('packages');
+            $table->foreignUuid('user_id')->constrained('users');
             $table->float('amount');
             $table->string('transaction_code');
             $table->string('status');
