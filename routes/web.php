@@ -15,8 +15,11 @@ use App\Http\Controllers\Member\PlaylistController;
 use App\Http\Controllers\Member\PricingController;
 use App\Http\Controllers\Member\TransactionController as MemberTransactionController;
 use App\Http\Controllers\Member\UserPremiumController;
+use App\Http\Controllers\Member\VerifyController;
+use App\Http\Middleware\IsEmailVerified;
 use App\Http\Middleware\SubscriptionMiddleware;
 use App\Models\UserPremium;
+use App\Notifications\OtpNotification;
 
 ;
 /*
@@ -66,14 +69,17 @@ Route::get('/account-setting/{id}', [AccountSettingController::class, 'index'])-
 Route::get('/account-setting/edit/{id}', [AccountSettingController::class, 'edit'])->name('account.setting.edit');
 Route::put('/account-setting/update/{id}', [AccountSettingController::class, 'update'])->name('account.setting.update');
 
-Route::get('/password/{id}', [AccountSettingController::class, 'indexPassword'])->name('password');
-Route::post('/password/update/{id}', [AccountSettingController::class, 'changePassword'])->name('password.update');
+Route::get('/password/{id}', [AccountSettingController::class, 'indexPassword'])->name('password')->middleware(IsEmailVerified::class);
+Route::post('/password/update/{id}', [AccountSettingController::class, 'changePassword'])->name('password.update')->middleware(IsEmailVerified::class);
 
 Route::get('/favorite-movie', [FavoriteMovieController::class, 'index'])->name('favorite.movie');
 Route::delete('/favorite-movie/{id}', [FavoriteMovieController::class, 'destroy'])->name('favorite.movie.destroy');
 
 Route::get('/playlists', [PlaylistController::class, 'index'])->name('member.playlists');
 Route::get('/playlists/{id}', [PlaylistController::class, 'show'])->name('member.playlists.detail');
+
+Route::get('/otp/verify', [VerifyController::class, 'showVerifyForm'])->name('otp.verify');
+Route::post('/otp/verify', [VerifyController::class, 'verifyOtp'])->name('otp.verify.post');
 
 
 Route::group(['prefix' => 'member', 'middleware' => ['auth']], function() {

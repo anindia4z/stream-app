@@ -19,7 +19,7 @@ return new class extends Migration
         });
 
         Schema::create('playlist_movie', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->foreignUuid('playlist_id')->constrained('playlist')->cascadeOnDelete();
             $table->foreignUuid('movie_id')->constrained('movies')->cascadeOnDelete();
             $table->timestamps();
